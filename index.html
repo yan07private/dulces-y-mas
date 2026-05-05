@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DULCES Y MAS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--menu de navegación-->
+<nav>
+    <div class="nav-logo">🍮🍪DULCES Y MAS🍨🥞</div>
+    <ul CLASSS="nav-links">
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#carrito">Carrito</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button id="btn-modo" onclick="cambiarModo()">🌙</button>
+</nav>
+<!--hero (presentación)-->
+<div class="hero">
+    <h1>Bienvenido a DULCES Y MAS🍰</h1>
+        <p>Los mejores postres y artículos para ti</p>
+</div>
+
+</div>
+<!--productos-->
+<section id="productos">
+    <h2>Nuestros Productos</h2>
+
+<div class="contenedor">
+    <div class="tarjeta">
+        <img src="https://img.freepik.com/fotos-premium/pedazo-pastel-chocolate-fondo-blanco-aislado_181203-23150.jpg" alt="Pastel de Chocolate">
+        <h3>Pastel de Chocolate</h3>
+        <p>Delicioso pastel de chocolate con cobertura de ganache.</p>
+        <p class="precio">$5.00</p>
+        <!-- estrellas para calificar el producto -->
+        <div class="estrellas" data-producto="Pastel de Chocolate">
+        <span onclick="calificar('pastel de chocolate', 1)">⭐</span>
+        <span onclick="calificar('pastel de chocolate', 2)">⭐</span>
+        <span onclick="calificar('pastel de chocolate', 3)">⭐</span>
+        <span onclick="calificar('pastel de chocolate', 4)">⭐</span>
+        <span onclick="calificar('pastel de chocolate', 5)">⭐</span>
+        </div>
+        <p class="nota-calificacion" id="nota-pastel de chocolate"> Sin calificación</p>
+        <button onclick="agregarAlCarrito('Pastel de Chocolate', 5.00)"> agregar al Carrito</button>
+    </div>
+    <div class="tarjeta">
+        <img src="https://1.bp.blogspot.com/-Xti9E7wO45A/Wnw81PJefDI/AAAAAAAAQVY/-a6p3sTTjykmZYCfpzBHnoVOVdH3utWPwCK4BGAYYCw/s1600/Galletitas%2Bde%2BVainilla.JPG" alt="Galletas de Vainilla">
+        <h3>Galletas de Vainilla</h3>
+        <p>Galletas suaves y esponjosas con sabor a vainilla.</p>
+        <p class="precio">$3.00</p>
+        <div class="estrellas" data-producto="Galletas de Vainilla">
+            <span onclick="calificar('galletas de vainilla', 1)">⭐</span>
+            <span onclick="calificar('galletas de vainilla', 2)">⭐</span>
+            <span onclick="calificar('galletas de vainilla', 3)">⭐</span>
+            <span onclick="calificar('galletas de vainilla', 4)">⭐</span>
+            <span onclick="calificar('galletas de vainilla', 5)">⭐</span>
+        </div>
+        <p class="nota-calificacion" id="nota-galletas de vainilla"> Sin calificación</p>
+        <button onclick="agregarAlCarrito('Galletas de Vainilla', 3.00)"> agregar al Carrito</button>
+    </div>
+    <div class="tarjeta">
+        <img src="https://www.xrecetas.com/wp-content/uploads/2020/06/caramelos-de-fruta-600x399.jpg" alt="Caramelos de Frutas">
+        <h3>Caramelos de Frutas</h3>
+        <p>Caramelos masticables con sabores frutales variados.</p>
+        <p class="precio">$2.00</p>
+        <div class="estrellas" data-producto="Caramelos de Frutas">
+            <span onclick="calificar('caramelos de frutas', 1)">⭐</span>
+            <span onclick="calificar('caramelos de frutas', 2)">⭐</span>
+            <span onclick="calificar('caramelos de frutas', 3)">⭐</span>
+            <span onclick="calificar('caramelos de frutas', 4)">⭐</span>
+            <span onclick="calificar('caramelos de frutas', 5)">⭐</span>
+        </div>
+        <p class="nota-calificacion" id="nota-caramelos de frutas"> Sin calificación</p>
+        <button onclick="agregarAlCarrito('Caramelos de Frutas', 2.00)"> agregar al Carrito</button>
+    </div>
+    <div class="tarjeta">
+        <img src="https://th.bing.com/th/id/R.17b54a745fd90a68ba5f4fae5c22bf3a?rik=9ZGGi9OpiKKMTw&pid=ImgRaw&r=0" alt="Helado de Fresa">
+        <h3>Helado de Fresa</h3>
+        <p>Helado cremoso con sabor a fresa natural.</p>
+        <p class="precio">$4.00</p>
+        <div class="estrellas" data-producto="Helado de Fresa">
+            <span onclick="calificar('helado de fresa', 1)">⭐</span>
+            <span onclick="calificar('helado de fresa', 2)">⭐</span>
+            <span onclick="calificar('helado de fresa', 3)">⭐</span>
+            <span onclick="calificar('helado de fresa', 4)">⭐</span>
+            <span onclick="calificar('helado de fresa', 5)">⭐</span>
+        </div>
+        <p class="nota-calificacion" id="nota-helado de fresa"> Sin calificación</p>
+        <button onclick="agregarAlCarrito('Helado de Fresa', 4.00)"> agregar al Carrito</button>
+    </div>
+</div>
+</section>
+<!--carrito-->
+<div id="carrito">
+    <h2>🛒 tu carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total">Total a pagar: $0</p>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <button id="btn-pagar" onclick="pagar()" style="display:none;">💳Pagar</button>
+</div>
+<!--contacto-->
+<section id="contacto">
+    <h2>Contactanos</h2>
+    <p> calle 2, avenida 18esquina, salinas, santa elena</p>
+    <p>Teléfono: +593 989489055</p>
+    <p>Correo electrónico: info@dulcesymas.com</p>
+</section>
+
+<!--footer-->
+<footer>
+    <p>&copy; 2026 DULCES Y MAS. Todos los derechos reservados.</p>
+</footer>
+
+<!-- boton de whatsapp -->
+ <a id="btn-whatsapp"
+ href="https://wa.me/593989489055?text=Hola!Me interesa hacer un pedido de dulces y mas"
+ target="_blank">
+ 💬 Pedir por whatsapp
+    </a>
+
+<script src="script.js"></script>
+</body>
+</html>
