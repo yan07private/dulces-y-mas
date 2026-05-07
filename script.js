@@ -136,3 +136,31 @@ function mostrarEstrellas(producto, promedio) {
 }
 // cargamos las calificaciones guardadas al cargar la página
 window.onload = cargarCalificaciones;
+
+// Carrusel
+let slideActual = 0;
+const slides = document.querySelectorAll(".slide");
+const puntos = document.querySelectorAll(".punto");
+
+function mostrarSlide(n) {
+  slides.forEach(s => s.classList.remove("activo"));
+  puntos.forEach(p => p.classList.remove("activo"));
+
+  slideActual = (n + slides.length) % slides.length;
+
+  slides[slideActual].classList.add("activo");
+  puntos[slideActual].classList.add("activo");
+}
+
+function cambiarSlide(direccion) {
+  mostrarSlide(slideActual + direccion);
+}
+
+function irASlide(n) {
+  mostrarSlide(n);
+}
+
+// Cambia automáticamente cada 4 segundos
+setInterval(function() {
+  cambiarSlide(1);
+}, 4000);

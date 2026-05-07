@@ -4,7 +4,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* FUENTES */
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+}
 body {
     background-color: #fff0f5;
     font-family: 'Times New Roman', Times, serif, sans-serif;
@@ -491,3 +503,87 @@ body.oscuro #btn-whatsapp {
 body.oscuro .nota-calificacion {
     color: #aaa;
 }
+/* CARRUSEL */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.carrusel {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 80px 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.slide.activo {
+  display: flex;
+}
+
+.slide h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.slide p {
+  font-size: 20px;
+  opacity: 0.9;
+  color: white;
+}
+
+/* Puntos */
+.puntos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 0;
+  background: linear-gradient(135deg, #c0306a, #e05a8a);
+}
+
+.punto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.punto.activo {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* Flechas */
+.flecha {
+  position: absolute;
+  top: 45%;
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  color: white;
+  font-size: 22px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.flecha:hover {
+  background-color: rgba(255,255,255,0.6);
+  transform: scale(1.1);
+}
+
+.izquierda { left: 15px; }
+.derecha { right: 15px; }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DULCES Y MAS</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!--menu de navegación-->
@@ -18,10 +19,36 @@
     <button id="btn-modo" onclick="cambiarModo()">🌙</button>
 </nav>
 <!--hero (presentación)-->
+<!-- HERO CON CARRUSEL -->
 <div class="hero">
-    <h1>Bienvenido a DULCES Y MAS🍰</h1>
-        <p>Los mejores postres y artículos para ti</p>
-        <a href="#productos" class="hero-btn">Ver Productos</a>
+  <div class="carrusel">
+    <div class="slide activo">
+      <h1>🍰 Bienvenido a DULCES Y MAS</h1>
+      <p>Los mejores postres para ti</p>
+      <a href="#productos" class="hero-btn">🛍️ Ver Productos</a>
+    </div>
+    <div class="slide">
+      <h1>🍪 Galletas y Postres</h1>
+      <p>Hechos con amor y los mejores ingredientes</p>
+      <a href="#productos" class="hero-btn">🛍️ Ver Productos</a>
+    </div>
+    <div class="slide">
+      <h1>🚚 Entrega a domicilio</h1>
+      <p>Pedidos por WhatsApp rápido y fácil</p>
+      <a href="#productos" class="hero-btn">💬 Pedir Ahora</a>
+    </div>
+  </div>
+
+  <!-- Puntos del carrusel -->
+  <div class="puntos">
+    <span class="punto activo" onclick="irASlide(0)"></span>
+    <span class="punto" onclick="irASlide(1)"></span>
+    <span class="punto" onclick="irASlide(2)"></span>
+  </div>
+
+  <!-- Flechas -->
+  <button class="flecha izquierda" onclick="cambiarSlide(-1)">❮</button>
+  <button class="flecha derecha" onclick="cambiarSlide(1)">❯</button>
 </div>
 
 </div>
