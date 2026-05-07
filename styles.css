@@ -38,6 +38,12 @@ nav .nav-links {
     list-style: none;
     display: flex;
     gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    list-style: none;
 }
 
 nav .nav-links a {
@@ -62,6 +68,7 @@ nav .nav-links a:hover {
 }
 .nav .nav-links a.active {
     transform: translateY(0px);
+    box-shadow: none;
 }
 /*hero */
 .hero {
