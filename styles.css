@@ -35,8 +35,8 @@ nav .nav-logo {
 }
 
 nav .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
     gap: 10px;
 }
 
@@ -50,16 +50,19 @@ nav .nav-links a {
     border: 2px solid rgba(255, 255, 255, 0.4);
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 nav .nav-links a:hover {
     background-color: white;
     color: #c0306a;
     border-color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
-
+.nav .nav-links a.active {
+    transform: translateY(0px);
+}
 /*hero */
 .hero {
     background: linear-gradient(135deg, #c0306a, #e05a8a, #ff8fab);
