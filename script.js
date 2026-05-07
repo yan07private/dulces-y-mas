@@ -57,13 +57,23 @@ function pagar() {
         alert("Tu carrito está vacío. Agrega productos antes de pagar.");
         return;
     }
-    let resumen = "Resumen de tu compra:\n\n";
+    // construye el rsumen de la compra//
+    let mensaje = "Nuevo pedido - Dulces y Mas:\n\n";
+    mensaje += "Productos:\n";
     carrito.forEach(function(producto) {
-        resumen += "• " + producto.nombre + " - $" + producto.precio + "\n";
+        mensaje += "- " + producto.nombre + " - $" + producto.precio + "\n";
     });
-    resumen += "\nTotal a pagar: $" + total;
-    resumen += "\n\n¡Gracias por tu compra!";
-    alert(resumen);
+    mensaje += "\n *Total a pagar: $" + total + "*";
+    mensaje += "\n\nPor favor, confirma tu pedido y direccion de entrega.";
+    mensaje += "\n\n¡Gracias por tu compra!";
+    // codifica el mensaje para usarlo en la URL de WhatsApp//
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    // abre whasapp con tu numero y el resumen del pedido//
+    window.open(
+        "https://wa.me/593989489055?text=" + mensajeCodificado,"_blank"
+    )
+    //muestra confirmacion y vacia carrito//
+    alert("¡Tu pedido ha sido enviado! Nos pondremos en contacto contigo pronto.");
     vaciarCarrito();
 }
 function cambiarModo() {
